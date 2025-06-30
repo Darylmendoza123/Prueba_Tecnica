@@ -3,25 +3,25 @@ import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
 
 function Login() {
-  const [credential, setCredential] = useState(''); // username o email
+  const [credential, setCredential] = useState(''); 
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setError('');  // Limpiar error previo
+    setError('');  
     try {
       const response = await api.post('/token/', {
-        username: credential,  // backend espera "username"
+        username: credential,  
         password,
       });
       localStorage.setItem('access_token', response.data.access);
       localStorage.setItem('refresh_token', response.data.refresh);
-      navigate('/usuarios'); // Redirigir a lista usuarios después del login
+      navigate('/usuarios'); 
     } catch (err) {
       setError('Credenciales inválidas, intenta de nuevo.');
-      setPassword(''); // Opcional: limpiar contraseña al fallar login
+      setPassword(''); 
     }
   };
 
