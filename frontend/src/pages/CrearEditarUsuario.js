@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
-import validator from 'validator'; // Librería para validación
-import DOMPurify from 'dompurify'; // Librería para sanitizar entradas
+import validator from 'validator'; 
+import DOMPurify from 'dompurify'; 
 
 function CrearEditarUsuario() {
   const [formData, setFormData] = useState({
@@ -49,7 +49,7 @@ function CrearEditarUsuario() {
   // Cambiar valores del formulario y sanitizar
   const handleChange = (e) => {
     const { name, value } = e.target;
-    const sanitizedValue = DOMPurify.sanitize(value); // Sanitizar input
+    const sanitizedValue = DOMPurify.sanitize(value); 
     setFormData({ ...formData, [name]: sanitizedValue });
   };
 
