@@ -19,7 +19,7 @@ class CrearUsuario(generics.CreateAPIView):
 
 # Listar usuarios - cualquier usuario autenticado
 class ListarUsuarios(generics.ListAPIView):
-    queryset = UsuarioPersonalizado.objects.all().order_by('id')  # ordenar para evitar warning
+    queryset = UsuarioPersonalizado.objects.all().order_by('id')  
     serializer_class = UsuarioSerializer
     pagination_class = PaginaUsuarios
     permission_classes = [IsAuthenticated]
