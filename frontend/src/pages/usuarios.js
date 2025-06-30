@@ -37,7 +37,7 @@ function Usuarios() {
   const exportarUsuariosCSV = async () => {
     try {
       const respuesta = await api.get('/usuarios/exportar-csv/', {
-        responseType: 'blob', // Necesario para manejar archivos
+        responseType: 'blob', 
       });
 
       const url = window.URL.createObjectURL(new Blob([respuesta.data]));
